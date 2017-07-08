@@ -8,6 +8,7 @@ export interface Matrix {
     readonly cols: number;
     getElement(row: number, column: number): number;
     readonly square?: boolean;
+    elements: number[][];
 }
 
 export function matrix(elements: number[][]): Matrix;
