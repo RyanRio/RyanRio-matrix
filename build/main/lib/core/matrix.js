@@ -1,9 +1,5 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.tslibBase = global.tslibBase || {})));
-}(this, (function (exports) { 'use strict';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function computeColumns(elements) {
     for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
         var row = elements_1[_i];
@@ -89,6 +85,7 @@ function setupDeterminant(toSet, ignoreColumn, ignoreRow) {
         return matrix(elements);
     }
 }
+exports.setupDeterminant = setupDeterminant;
 function determinant(input) {
     var rows = input.rows;
     var cols = input.cols;
@@ -237,64 +234,5 @@ function matrix(elements) {
     };
     return m;
 }
-
-function init(rows, cols, value) {
-    var elements = [];
-    for (var i = 0; i < rows; i++) {
-        var row = [];
-        for (var j = 0; j < cols; j++) {
-            row.push(value);
-        }
-        elements.push(row);
-    }
-    return matrix(elements);
-}
-
-/**
- * Returns a matrix with each element as a one
- * @param rows number of rows
- * @param cols number of columns
- */
-function ones(rows, cols) {
-    return init(rows, cols, 1);
-}
-
-/**
- * Returns a matrix with each element as a zero
- * @param rows number of rows
- * @param cols number of columns
- */
-function zeros(rows, cols) {
-    return init(rows, cols, 0);
-}
-
-function identityMatrix(rows, cols) {
-    var elements = [];
-    var zeroIterator = 0;
-    for (var i = 0; i < rows; i++) {
-        var row = [];
-        for (var j = 0; j < cols; j++) {
-            var value = void 0;
-            if (zeroIterator % (rows + 1) === 0) {
-                value = 1;
-            }
-            else {
-                value = 0;
-            }
-            row.push(value);
-            zeroIterator++;
-        }
-        elements.push(row);
-    }
-    return matrix(elements);
-}
-
 exports.matrix = matrix;
-exports.ones = ones;
-exports.zeros = zeros;
-exports.identityMatrix = identityMatrix;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=matrix.js.map

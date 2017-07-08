@@ -1,7 +1,7 @@
 {
-    "name": "tslib-base",
-    "version": "0.0.0",
-    "description": "Template for TS Libraries",
+    "name": "@ryanrio/matrix",
+    "version": "1.0.0",
+    "description": "Matrix Library",
     "author": {
         "name": "Ryan Mitchell",
         "email": "ryan.mitchell@sps.edu"
@@ -20,10 +20,9 @@
     "keywords": [],
     "repository": {
         "type": "git",
-        "url": "git://github.com/RyanRio/tslib-base.git"
+        "url": "git://github.com/RyanRio/ryanrio-matrix"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "scripts": {
         "build": "trash build && tsc -p tsconfig.main.json && tsc -p tsconfig.module.json && npm run build:browser",
         "build:browser": "rollup --config rollup.config.js --format umd --name \"tslibBase\" --output build/browser/index.js && sorcery -i build/browser/index.js",
