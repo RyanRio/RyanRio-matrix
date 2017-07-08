@@ -227,7 +227,8 @@ export function matrix(elements) {
             else {
                 return undefined;
             }
-        }
+        },
+        elements: elements
     };
     return m;
 }

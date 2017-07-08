@@ -11,6 +11,7 @@ export interface Matrix {
     toString(): string;
     __inverse__(): Matrix | undefined;
     square?: boolean;
+    elements: number[][];
 }
 export declare function setupDeterminant(toSet: Matrix, ignoreColumn: number, ignoreRow?: number): Matrix | undefined;
 export declare function matrix(elements: number[][]): Matrix;
