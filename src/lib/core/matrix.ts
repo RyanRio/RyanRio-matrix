@@ -11,6 +11,7 @@ export interface Matrix {
     toString(): string;
     __inverse__(): Matrix | undefined;
     square?: boolean;
+    elements: number[][];
 }
 
 function computeColumns(elements: number[][]): number {
@@ -274,7 +275,8 @@ export function matrix(elements: number[][]): Matrix {
             else {
                 return undefined;
             }
-        }
+        },
+        elements
     };
     return m;
 }
